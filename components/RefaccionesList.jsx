@@ -1,31 +1,40 @@
+//"use client"
 import Link from "next/link";
 import RemoveBtn from "./RemoveBtn";
 import { HiPencilAlt } from "react-icons/hi";
 
-const getTopics = async () => {
-
-
+//funcion praa obtener las refacciones
+const getRefactions = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/topics", {
+    //http://localhost:3000/api/refacciones
+    //http://localhost:3000/api/topics
+    //aqui golpeamos endpoint que regresa refacciones en formato
+    //json para hacer loop
+      const res = await fetch("http://localhost:3000/api/refacciones", {
       cache: "no-store",
     });
 
     if (!res.ok) {
       throw new Error("Failed to fetch topics");
     }
-//console.log('topics:',res.json())
+
     return res.json();
   } catch (error) {
     console.log("Error loading topics: ", error);
   }
 };
 
-export default async function TopicsList() {
-  const { topics } = await getTopics();
+// no impo
+export default async function RefactionsList() {
+ // {refacciones} viene de GET() en route .js
+  const { refacciones } = await getRefactions();
+  console.log('refacciones encontradas:',refacciones)
 
   return (
     <>
-      {topics.map((t) => (
+
+
+      {refacciones.map((t) => (
         <div
           key={t._id}
           className="p-4 border border-slate-300 my-3 flex justify-between gap-5 items-start"
@@ -40,11 +49,21 @@ export default async function TopicsList() {
             <Link href={`/editTopic/${t._id}`}>
               <HiPencilAlt size={24} />
             </Link>
-
-           
           </div>
         </div>
       ))}
     </>
   );
 }
+
+ 
+
+
+
+
+
+
+  
+
+
+     

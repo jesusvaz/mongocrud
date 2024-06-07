@@ -12,7 +12,7 @@ export async function POST(request) {
 }
 
 export async function GET() {
-  console.log('GET api function');
+  console.log('GET api/opics function');
   await connectMongoDB();
   const topics = await Topic.find();
   return NextResponse.json({ topics });
