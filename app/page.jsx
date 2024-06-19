@@ -6,7 +6,7 @@ export default function Home() {
   console.log('uri:',process.env.MONGODB_URI)
   return (
     <>
-      <TopicsList/>
+      {/* <TopicsList/> */}
       <RefaccionesList/>
 
     </>

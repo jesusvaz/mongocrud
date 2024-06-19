@@ -1,8 +1,9 @@
 
-
+// esta linea va si o si
 import mongoose, { Schema } from "mongoose";
 
-
+// crear schema
+// crea tieme stamps de creacion y update
 const refaccionSchema = new Schema(
   {
     car: String,
@@ -15,6 +16,8 @@ const refaccionSchema = new Schema(
   }
 );
 
+// refaccion es la clase en mongodb,
+// si no se crea el modelo con el scchems
 const Refaccion = mongoose.models.Refaccion || mongoose.model("Refaccion", refaccionSchema);
 
-export default Refaccion;
+export default Refaccion;// devuelve el mmodelo Refaccion ysea que ya exista o se crea el modelo nuevo

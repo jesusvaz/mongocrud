@@ -1,3 +1,4 @@
+// coneccion a mongo
 import mongoose from "mongoose";
 
 

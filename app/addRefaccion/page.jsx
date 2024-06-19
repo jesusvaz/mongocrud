@@ -22,7 +22,7 @@ export default function AddRefaccion() {
 
         try {
             const res = await fetch("http://localhost:3000/api/refacciones", {
-                method: "POST",
+                method: "POST",// aqui se indica el verbo a jecutar en refacciones
                 headers: {
                     "Content-type": "application/json",
                 },
@@ -30,8 +30,9 @@ export default function AddRefaccion() {
             });
 
             if (res.ok) {
+               // refresdh and redirct
                 router.refresh();
-                router.push("/");
+                router.push("/refacciones");
             } else {
                 throw new Error("Failed to create a topic");
             }

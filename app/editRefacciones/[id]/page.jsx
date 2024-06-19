@@ -11,16 +11,23 @@ const getRefacionesById = async (id) => {
       throw new Error("Failed to fetch topic");
     }
 
+
     return res.json();
   } catch (error) {
     console.log(error);
   }
 };
 
-export default async function EditTopic({ params }) {
+
+
+export default async function EditRefacciones({ params }) {
   const { id } = params;
-  const {refaccion } = await getRefacionesById(id);
-  const { car,model,year, description } = refaccion;
+  console.log("params id:", id);
+  console.log("params :", params);
+
+  const { refacciones } = await getRefacionesById(id);
+  console.log("actualizando en refacciones:", refacciones)
+  const { car, model, year, description } = refacciones;
 
   return <EditRefaccionesForm id={id} car={car} model={model} year={year} description={description} />;
 }

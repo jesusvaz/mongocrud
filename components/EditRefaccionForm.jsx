@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 export default function EditRefaccionForm({ id, car, model, year, description }) {
-  const { id } = params;
+
   const [newCar, setNewCar] = useState(car);
   const [newYear, setNewYear] = useState(year);
   const [newModel, setNewModel] = useState(model);
@@ -51,15 +51,15 @@ export default function EditRefaccionForm({ id, car, model, year, description })
         value={newModel}
         className="border border-slate-500 px-8 py-2"
         type="text"
-        placeholder="Model"
+        placeholder="Ref Model"
       />
 
       <input
-        onChange={(e) => setNewYar(e.target.value)}
+        onChange={(e) => setNewYear(e.target.value)}
         value={newYear}
         className="border border-slate-500 px-8 py-2"
         type="text"
-        placeholder="Model"
+        placeholder="Ref Year"
       />
 
   
@@ -69,7 +69,7 @@ export default function EditRefaccionForm({ id, car, model, year, description })
         value={newDescription}
         className="border border-slate-500 px-8 py-2"
         type="text"
-        placeholder="Topic Description"
+        placeholder="Ref Description"
       />
 
       <button className="bg-green-600 font-bold text-white py-3 px-6 w-fit">

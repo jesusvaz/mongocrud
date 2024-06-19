@@ -1,18 +1,19 @@
 import connectMongoDB from "../../../libs/mongodb";
-import Refacciones from "../../models/refacciones";
+import Refs from "../../../models/refacciones";
 import { NextResponse } from "next/server";
 
 export async function PUT(request, { params }) {
   const { id } = params;
-  const { newTitle: title, newDescription: description } = await request.json();
+  // get peremeter from request.json
+  const { newCar: car, newModel:model , newYear:year, newDescription: description} = await request.json();
   await connectMongoDB();
-  await Refacciones.findByIdAndUpdate(id, { title, description });
-  return NextResponse.json({ message: "Topic updated" }, { status: 200 });
+  await Refs.findByIdAndUpdate(id, { car, model,year,description });
+  return NextResponse.json({ message: "Refacciones updated" }, { status: 200 });
 }
 
 export async function GET(request, { params }) {
   const { id } = params;
   await connectMongoDB();
-  const refacciones = await Refacciones.findOne({ _id: id });
-  return NextResponse.json({ topic }, { status: 200 });
+  const refacciones = await Refs.findOne({ _id: id });
+  return NextResponse.json({ refacciones }, { status: 200 });
 }

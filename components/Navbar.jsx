@@ -7,12 +7,12 @@ export default function Navbar() {
     <Link className="text-white font-bold" href={"/"}>
       Chuy Coding.
     </Link>
-    {/* <Link className="bg-white p-2" href={"/addTopic"}>
+    <Link className="bg-white p-2" href={"/addTopic"}>
       Add Topic
     </Link>
     <Link className="bg-white p-2" href={"/addRefaccion"}>
       Add Refacion
-    </Link> */}
+    </Link>
     <Link className="bg-white p-2" href={"/refacciones"}>
       Refaciones
     </Link>

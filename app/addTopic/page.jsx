@@ -19,7 +19,7 @@ export default function AddTopic() {
 
     try {
       const res = await fetch("http://localhost:3000/api/topics", {
-        method: "POST",
+        method: "POST",// aqui se indica el verbo a jecutar en topics
         headers: {
           "Content-type": "application/json",
         },
@@ -27,8 +27,9 @@ export default function AddTopic() {
       });
 
       if (res.ok) {
+         // refresdh and redirct
         router.refresh();
-        router.push("/");
+        router.push("/topics");
       } else {
         throw new Error("Failed to create a topic");
       }

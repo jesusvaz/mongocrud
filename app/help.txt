@@ -21,3 +21,8 @@ export default function TopicsList() {
         </div>
     )
 }
+************************************************
+  const [newCar, setNewCar] = useState(car);
+  const [newYear, setNewYear] = useState(year);
+  const [newModel, setNewModel] = useState(model);
+  const [newDescription, setNewDescription] = useState(description);
