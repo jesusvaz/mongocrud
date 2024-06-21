@@ -11,16 +11,16 @@ const getRefactions = async () => {
     });
 
     if (!res.ok) {
-      throw new Error("Failed to fetch topics");
+      throw new Error("Failed to fetch refacciones");
     }
-//console.log('topics:',res.json())
+
     return res.json();
   } catch (error) {
-    console.log("Error loading topics: ", error);
+    console.log("Error loading refacciones: ", error);
   }
 };
 
-export default async function TopicsList() {
+export default async function TRefacciones() {
   const { refacciones } = await getRefactions();
 
   return (
@@ -37,7 +37,7 @@ export default async function TopicsList() {
 
           <div className="flex gap-2">
             <RemoveBtn id={t._id} />
-            <Link href={`/editTopic/${t._id}`}>
+            <Link href={`/editRefacciones/${t._id}`}>
               <HiPencilAlt size={24} />
             </Link>
 
