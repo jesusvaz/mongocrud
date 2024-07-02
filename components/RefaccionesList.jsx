@@ -1,5 +1,5 @@
 import Link from "next/link";
-import RemoveBtn from "./RemoveBtn";
+import RemoveBtn from "./RemoveRefaccion";
 import { HiPencilAlt } from "react-icons/hi";
 
 const getRefactions = async () => {
@@ -20,7 +20,7 @@ const getRefactions = async () => {
   }
 };
 
-export default async function TRefacciones() {
+export default async function Tefacciones() {
   const { refacciones } = await getRefactions();
 
   return (
@@ -30,6 +30,18 @@ export default async function TRefacciones() {
           key={t._id}
           className="p-4 border border-slate-300 my-3 flex justify-between gap-5 items-start"
         >
+          <div>
+            <h2 className="font-bold text-2xl">{t.title}</h2>
+            <div>{t.car}</div>
+          </div>
+          <div>
+            <h2 className="font-bold text-2xl">{t.title}</h2>
+            <div>{t.model}</div>
+          </div>
+          <div>
+            <h2 className="font-bold text-2xl">{t.title}</h2>
+            <div>{t.year}</div>
+          </div>
           <div>
             <h2 className="font-bold text-2xl">{t.title}</h2>
             <div>{t.description}</div>

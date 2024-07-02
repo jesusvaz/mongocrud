@@ -5,13 +5,19 @@ import { useRouter } from "next/navigation";
 
 export default function RemoveBtn({ id }) {
   const router = useRouter();
-  const removeTopic = async () => {
-    const confirmed = confirm("Are you sure?");
+  const removeRefaction = async () => {
+    const confirmed = confirm("Are you sure to remove Refaction ?");
 
     if (confirmed) {
-      const res = await fetch(`http://localhost:3000/api/refacciones/${id}`, {
-        method: "DELETE",
-      });
+     //http://localhost:3000/api/refacciones?id=66637df84fad5ab4b842820d
+     
+     const res = await fetch("/http://localhost:3000/api/refacciones?id=66637df84fad5ab4b842820d", {
+      method: "DELETE",
+    });
+
+    //  const res = await fetch(`http://localhost:3000/api/refacciones?id=${id}`, {
+    //     method: "DELETE",
+    //   });
 
       if (res.ok) {
         router.refresh();
@@ -20,7 +26,7 @@ export default function RemoveBtn({ id }) {
   };
 
   return (
-    <button onClick={removeTopic} className="text-red-400">
+    <button onClick={removeRefaction} className="text-red-400">
       <HiOutlineTrash size={24} />
     </button>
   );
